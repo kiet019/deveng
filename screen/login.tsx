@@ -29,7 +29,11 @@ export default function LoginScreen({ navigation }: any) {
           />
           <Spacing spacing={1} />
           <View>
-            <ContainedButton>
+            <ContainedButton
+              onPress={() => {
+                navigation.navigate("HomeNavigation");
+              }}
+            >
               Sign in
             </ContainedButton>
           </View>
@@ -42,17 +46,21 @@ export default function LoginScreen({ navigation }: any) {
           justifyContent: "center",
         }}
       >
-        <Text style={{}}>Don't have account? </Text>
-        <Text style={{ color: "#5667FD"}} onPress={() => {
-          navigation.navigate("SignUp-Email")
-        }}>Sign up</Text>
+        <Text style={{ fontSize: 18 }}>Don't have account? </Text>
+        <Text
+          style={{ color: "#5667FD", fontSize: 18 }}
+          onPress={() => {
+            navigation.navigate("SignUp-Email");
+          }}
+        >
+          Sign up
+        </Text>
       </View>
     </SignInWelcomeLayout>
   );
 }
 
 const styles = StyleSheet.create({
-
   inputContainer: {
     flex: 1,
     justifyContent: "center",

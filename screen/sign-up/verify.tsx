@@ -22,7 +22,9 @@ export default function SignUpVerify({ navigation }: any) {
           />
           <Spacing spacing={1} />
           <View>
-            <ContainedButton>Next</ContainedButton>
+            <ContainedButton onPress={() => {
+              navigation.navigate("SignUp-Password")
+            }}>Next</ContainedButton>
           </View>
         </View>
       </View>

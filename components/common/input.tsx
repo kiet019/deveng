@@ -39,6 +39,42 @@ export const TitleInput = ({
   );
 };
 
+export const OutlineInput = ({
+  placeholder,
+  onChangeText,
+  title,
+  password = false,
+}: {
+  title: string;
+  placeholder: string;
+  onChangeText: SetStateAction<any>;
+  password?: boolean;
+}) => {
+  const [input, setInput] = useState("");
+
+  const handleTextChange = (newText: string) => {
+    setInput(newText);
+    if (onChangeText) {
+      onChangeText(newText);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.innerOutlineContainer}>
+        <TextInput
+          style={styles.outlinedInput}
+          placeholder={placeholder}
+          placeholderTextColor={"#364356"}
+          secureTextEntry={password}
+          value={input}
+          onChangeText={handleTextChange}
+        />
+      </View>
+    </View>
+  );
+};
+
 export const NumberInput = ({
   onChangeText,
   title,
@@ -106,6 +142,8 @@ export const NumberInput = ({
   );
 };
 
+
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
@@ -134,7 +172,7 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: 11,
-    borderRadius: 4,
+    borderRadius: 10,
     paddingHorizontal: 16,
     paddingVertical: 19,
     backgroundColor: "#FFF",
@@ -142,4 +180,15 @@ const styles = StyleSheet.create({
     fontWeight: "300",
     color: "#364356",
   },
+  outlinedInput: {
+    fontSize: 20,
+    borderRadius: 15,
+    borderColor: "black",
+    borderWidth: 1,
+    paddingVertical: 7,
+    paddingHorizontal: 26
+  },
+  innerOutlineContainer: {
+    width:270,
+  }
 });

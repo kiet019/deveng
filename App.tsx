@@ -7,13 +7,41 @@ import WelcomeScreen from "./screen/welcome";
 import SignUpEmail from "./screen/sign-up/email";
 import SignUpVerify from "./screen/sign-up/verify";
 import SignUpPassword from "./screen/sign-up/password";
+import ContactScreen from "./screen/contact";
+import BasketScreen from "./screen/basket";
+import { TitleHeader } from "./components/header/title-header";
+import HomeNavigation from "./screen/home";
+import { View } from "react-native";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen
+        <Stack.Screen
+          name="HomeNavigation"
+          component={HomeNavigation}
+          options={{ headerShown: false }}
+          // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Basket"
+          component={BasketScreen}
+          options={{
+            headerTitle: () => <TitleHeader title="Your basket" />,
+          }}
+        />
+        <Stack.Screen
+          name="Contact"
+          component={ContactScreen}
+          options={{ headerTitle: "" }}
+        />
+        <Stack.Screen
           name="SignUp-Password"
           component={SignUpPassword}
           options={{ headerShown: false }}
@@ -29,11 +57,6 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}
           options={{ headerShown: false }}
@@ -43,13 +66,6 @@ export default function App() {
           component={SplashWelcomeScreen}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen
-          name="HomeNavigation"
-          component={HomeNavigation}
-          options={{ headerShown: false }}
-        /> */}
-        {/* <Stack.Screen name="Profile" component={Profile} /> */}
-        {/* <Stack.Screen name="Settings" component={Settings} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

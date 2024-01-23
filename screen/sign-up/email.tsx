@@ -38,9 +38,9 @@ export default function SignUpEmail({ navigation }: any) {
               marginTop: 30,
             }}
           >
-            <Text style={{}}>You have an account? </Text>
+            <Text style={{ fontSize: 18 }}>You have an account? </Text>
             <Text
-              style={{ color: "#5667FD" }}
+              style={{ color: "#5667FD", fontSize: 18 }}
               onPress={() => {
                 navigation.navigate("Login");
               }}
