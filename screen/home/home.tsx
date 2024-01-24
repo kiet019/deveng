@@ -13,7 +13,7 @@ const course = require("../../assets/icons/course.png");
 const contact = require("../../assets/icons/contact.png");
 export default function HomeScreen({ navigation }: any) {
   return (
-    <SignInWelcomeLayout paddingTop={80}>
+    <SignInWelcomeLayout paddingTop={80} isBottomTab={true}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image
@@ -33,9 +33,11 @@ export default function HomeScreen({ navigation }: any) {
             Categories
           </Text>
           <View style={styles.categoryItemContainer}>
-            <Pressable onPress={() => {
-              navigation.navigate("Booking")
-            }}>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Booking");
+              }}
+            >
               <Image source={student} style={styles.image} />
             </Pressable>
             <Image source={teacher} style={styles.image} />
@@ -63,6 +65,11 @@ export default function HomeScreen({ navigation }: any) {
             <HomeCard iconSrc={contact} description="Contact Us" />
           </View>
         </View>
+        <View
+          style={{
+            height: 70,
+          }}
+        ></View>
       </ScrollView>
     </SignInWelcomeLayout>
   );
@@ -76,7 +83,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   informationContainer: {
-    marginTop: 30,
+    marginTop: 40,
     flex: 3,
   },
   categoryItemContainer: {

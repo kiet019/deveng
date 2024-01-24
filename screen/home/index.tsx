@@ -1,29 +1,37 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import HomeScreen from "./home";
 import { TitleHeader } from "../../components/header/title-header";
 import BookingScreen from "./booking";
 import BookingDetailScreen from "./booking-detail";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomNavigation } from "../../components/navigation/bottom-navigation";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 export default function HomeNavigation() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
+    <Tab.Navigator tabBar={(props) => <BottomNavigation {...props} />}>
+      <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="BookingDetail"
-        component={BookingDetailScreen}
-        options={{ headerTitle: () => <TitleHeader title="Booking Detail" /> }}
+      <Tab.Screen
+        name="Course"
+        component={HomeScreen}
+        options={{ headerShown: false }}
       />
-      <Stack.Screen
-        name="Booking"
-        component={BookingScreen}
-        options={{ headerTitle: () => <TitleHeader title="Booking" /> }}
+      <Tab.Screen
+        name="Message"
+        component={HomeScreen}
+        options={{ headerShown: false }}
       />
-    </Stack.Navigator>
+      <Tab.Screen
+        name="Account"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+    </Tab.Navigator>
   );
 }
+
+// tabBar={(props) => <BottomNavigation {...props} />}

@@ -12,6 +12,8 @@ import BasketScreen from "./screen/basket";
 import { TitleHeader } from "./components/header/title-header";
 import HomeNavigation from "./screen/home";
 import { View } from "react-native";
+import BookingDetailScreen from "./screen/home/booking-detail";
+import BookingScreen from "./screen/home/booking";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -19,15 +21,28 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
           name="HomeNavigation"
           component={HomeNavigation}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
         <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
+          name="BookingDetail"
+          component={BookingDetailScreen}
+          options={{
+            headerTitle: () => <TitleHeader title="Booking Detail" />,
+          }}
+        />
+        <Stack.Screen
+          name="Booking"
+          component={BookingScreen}
+          options={{ headerTitle: () => <TitleHeader title="Booking" /> }}
         />
         <Stack.Screen
           name="Basket"

@@ -4,10 +4,12 @@ import { KeyboardAvoidingView, Platform, View } from "react-native";
 export const SignInWelcomeLayout = ({
   children,
   paddingTop = 0,
-  backgroundColor = "#f4f5f9"
+  backgroundColor = "#f4f5f9",
+  isBottomTab = false,
 }: {
   paddingTop?: number;
   children: ReactNode;
+  isBottomTab?: boolean;
   backgroundColor?: string;
 }) => {
   return (
@@ -15,9 +17,10 @@ export const SignInWelcomeLayout = ({
       style={{
         flex: 1,
         paddingTop,
-        paddingHorizontal:10,
+        paddingHorizontal: 10,
         minHeight: 700,
         backgroundColor,
+        paddingBottom: isBottomTab ? 89 : 0,
       }}
     >
       {children}
