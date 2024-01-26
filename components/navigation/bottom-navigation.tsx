@@ -87,7 +87,7 @@ export const BottomNavigation = ({
                 alignItems: "center",
                 paddingTop: 10,
                 paddingBottom: 15,
-                marginHorizontal: 23,
+                marginHorizontal: 20,
               }}
             >
               {renderItem(label.toString(), isFocused)}

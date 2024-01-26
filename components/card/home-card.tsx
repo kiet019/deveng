@@ -8,7 +8,7 @@ export const HomeCard = ({ iconSrc, description }: HomeCardProps) => {
   return (
     <View
       style={{
-        width: 150,
+        width: 160,
         height: 150,
         backgroundColor: "#EBE6E6",
         borderRadius: 20,

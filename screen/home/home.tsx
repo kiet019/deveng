@@ -19,9 +19,9 @@ export default function HomeScreen({ navigation }: any) {
           <Image
             source={banner}
             style={{
-              width: 390,
+              width: 369,
               height: 220,
-              objectFit: "contain",
+              objectFit: "cover",
               borderRadius: 20,
             }}
           />
@@ -35,13 +35,21 @@ export default function HomeScreen({ navigation }: any) {
           <View style={styles.categoryItemContainer}>
             <Pressable
               onPress={() => {
-                navigation.navigate("Booking");
+                navigation.navigate("Student-Booking");
               }}
             >
               <Image source={student} style={styles.image} />
             </Pressable>
+            <Pressable onPress={() => {
+                navigation.navigate("Teacher-Booking");
+              }}>
             <Image source={teacher} style={styles.image} />
+            </Pressable>
+            <Pressable onPress={() => {
+                navigation.navigate("Participant-Booking");
+              }}>
             <Image source={participant} style={styles.image} />
+            </Pressable>
           </View>
         </View>
         <View style={styles.informationContainer}>
@@ -51,8 +59,8 @@ export default function HomeScreen({ navigation }: any) {
             Infomation Access
           </Text>
           <View style={styles.categoryItemContainer}>
-            <HomeCard iconSrc={calendar} description="Weekly timetable" />
-            <HomeCard iconSrc={course} description="Course participant" />
+            <HomeCard iconSrc={calendar} description="Weekly Timetable" />
+            <HomeCard iconSrc={course} description="Course Participant" />
           </View>
         </View>
         <View style={styles.informationContainer}>
@@ -62,7 +70,10 @@ export default function HomeScreen({ navigation }: any) {
             Contact Us
           </Text>
           <View style={styles.categoryItemContainer}>
+            <Pressable onPress={() => {
+              navigation.navigate("Contact")}}>
             <HomeCard iconSrc={contact} description="Contact Us" />
+            </Pressable>
           </View>
         </View>
         <View

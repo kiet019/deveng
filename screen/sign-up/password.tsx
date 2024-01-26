@@ -25,7 +25,7 @@ export default function SignUpPassword({ navigation }: any) {
           <View>
             <ContainedButton
               onPress={() => {
-                navigation.navigate("Login");
+                navigation.navigate("HomeNavigation");
               }}
             >
               Next

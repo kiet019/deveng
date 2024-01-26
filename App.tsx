@@ -13,7 +13,10 @@ import { TitleHeader } from "./components/header/title-header";
 import HomeNavigation from "./screen/home";
 import { View } from "react-native";
 import BookingDetailScreen from "./screen/home/booking-detail";
-import BookingScreen from "./screen/home/booking";
+import StudentBookingScreen from "./screen/home/studentBooking";
+import TeacherBookingScreen from "./screen/home/TeacherBooking";
+import ParticipantBookingScreen from "./screen/home/participantBooking";
+import StudentBookingDetailScreen from "./screen/home/studentBookingDetail";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -21,16 +24,55 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="SplashWelcome"
+          component={SplashWelcomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{ headerShown: false }}
         />
-
+        <Stack.Screen
+          name="SignUp-Email"
+          component={SignUpEmail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp-Password"
+          component={SignUpPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp-Verify"
+          component={SignUpVerify}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="HomeNavigation"
           component={HomeNavigation}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
+        />
+        <Stack.Screen
+          name="Student-Booking"
+          component={StudentBookingScreen}
+          options={{ headerTitle: () => <TitleHeader title="Student Booking" /> }}
+        />
+        <Stack.Screen
+          name="Teacher-Booking"
+          component={TeacherBookingScreen}
+          options={{ headerTitle: () => <TitleHeader title="Teacher Booking" /> }}
+        />
+        <Stack.Screen
+          name="Participant-Booking"
+          component={ParticipantBookingScreen}
+          options={{ headerTitle: () => <TitleHeader title="Participant Booking" /> }}
         />
         <Stack.Screen
           name="BookingDetail"
@@ -40,9 +82,11 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="Booking"
-          component={BookingScreen}
-          options={{ headerTitle: () => <TitleHeader title="Booking" /> }}
+          name="Student-Booking-Detail-Screen"
+          component={StudentBookingDetailScreen}
+          options={{
+            headerTitle: () => <TitleHeader title="Booking Detail" />,
+          }}
         />
         <Stack.Screen
           name="Basket"
@@ -55,31 +99,6 @@ export default function App() {
           name="Contact"
           component={ContactScreen}
           options={{ headerTitle: "" }}
-        />
-        <Stack.Screen
-          name="SignUp-Password"
-          component={SignUpPassword}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignUp-Email"
-          component={SignUpEmail}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignUp-Verify"
-          component={SignUpVerify}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SplashWelcome"
-          component={SplashWelcomeScreen}
-          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -2,6 +2,7 @@ import { Image, StyleSheet, View } from "react-native";
 import { SignInWelcomeLayout } from "../components/layout/signin-welcome";
 import { Button, Text } from "react-native-paper";
 import { ContainedButton } from "../components/common/button";
+import { Spacing } from "../components/common/spacing";
 
 const logo = require("../assets/images/logo.png");
 
@@ -10,7 +11,14 @@ export default function WelcomeScreen({ navigation }: any) {
     <SignInWelcomeLayout>
       <View style={{ flex: 0.9 }}>
         <View style={styles.imageContainer}>
-          <Image source={logo} />
+          <Image 
+          style={{
+            flex: 1,
+            width: 365,
+            height: 350,
+            resizeMode: 'contain'
+          }}
+           source={logo} />
         </View>
         <View style={styles.detailContainer}>
           <Text
@@ -36,20 +44,16 @@ export default function WelcomeScreen({ navigation }: any) {
           </Text>
         </View>
         <View style={styles.detailContainer}>
-          <ContainedButton>Sign up</ContainedButton>
-          <Text
-            style={{
-              marginTop: 40,
-              fontSize: 18,
-              color: "#5667FD",
-              fontWeight: "400",
-            }}
-            onPress={() => {
-              navigation.navigate("Login")
-            }}
-          >
-            Skip
-          </Text>
+          <ContainedButton onPress={() => {
+            navigation.navigate("Login")
+          }}>
+            Sign in
+          </ContainedButton>
+          <Spacing spacing={1} />
+          <ContainedButton onPress={() => {
+            navigation.navigate("SignUp-Email")
+          }}>Sign up
+          </ContainedButton>
         </View>
       </View>
     </SignInWelcomeLayout>

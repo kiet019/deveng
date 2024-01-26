@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SignInWelcomeLayout } from "../../components/layout/signin-welcome";
 
 const courseImage = require("../../assets/images/course-1.png");
-export default function BookingScreen({ navigation }: any) {
+export default function TeacherBookingScreen({ navigation }: any) {
   const data: BasketCardProps[] = [
     {
       imageSrc: courseImage,

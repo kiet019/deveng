@@ -1,32 +1,40 @@
 import { Image, StyleSheet, View } from "react-native";
-import { SignInWelcomeLayout } from "../../components/layout/signin-welcome";
+import { SignInWelcomeLayout } from "../layout/signin-welcome";
 import { Text } from "react-native-paper";
-import { ContainedButton } from "../../components/common/button";
+import { ContainedButton } from "../common/button";
 
-const avatar = require("../../assets/images/avatar.png");
-export default function BookingDetailScreen({ navigation }: any) {
+export interface BookingCardProps {
+  imageTeacherSrc: any;
+  name: string;
+  age: number;
+  level: string;
+  teacherPrice: string;
+  communicationDetail: string;
+  aboutThisCourseDetail: string;
+}
+export const BookingCard = ({ props }: { props: BookingCardProps }) => {
   return (
     <SignInWelcomeLayout>
       <View style={styles.userContainer}>
         <Image
+          source={props.imageTeacherSrc}
           style={{
             marginRight: 40,
           }}
-          source={avatar}
         />
         <View>
-          <Text 
-          style={styles.userText}
-          >Nguyễn Văn A</Text>
+          <Text
+            style={styles.userText}
+          >{props.name}</Text>
           <Text
             style={{
               marginVertical: 25,
               ...styles.userText,
             }}
           >
-            Age: xx
+            {props.age}
           </Text>
-          <Text style={styles.userText}>Trình độ: xx</Text>
+          <Text style={styles.userText}>{props.level}</Text>
         </View>
       </View>
       <View style={styles.courseContainer}>
@@ -53,7 +61,7 @@ export default function BookingDetailScreen({ navigation }: any) {
               fontWeight: "bold",
             }}
           >
-            $xx.xx
+            {props.teacherPrice}
           </Text>
         </View>
         <Text
@@ -65,7 +73,7 @@ export default function BookingDetailScreen({ navigation }: any) {
             fontWeight: "400",
           }}
         >
-          6h 14min · 24 Lessons
+          {props.communicationDetail}
         </Text>
         <Text
           style={{
@@ -85,8 +93,7 @@ export default function BookingDetailScreen({ navigation }: any) {
             fontWeight: "400",
           }}
         >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium,
+          {props.aboutThisCourseDetail}
         </Text>
       </View>
       <View style={styles.buttonContainer}>
@@ -94,7 +101,7 @@ export default function BookingDetailScreen({ navigation }: any) {
       </View>
     </SignInWelcomeLayout>
   );
-}
+};
 
 const styles = StyleSheet.create({
   userContainer: {

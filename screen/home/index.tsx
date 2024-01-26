@@ -1,7 +1,7 @@
 import React from "react";
 import HomeScreen from "./home";
 import { TitleHeader } from "../../components/header/title-header";
-import BookingScreen from "./booking";
+import BookingScreen from "./studentBooking";
 import BookingDetailScreen from "./booking-detail";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation } from "../../components/navigation/bottom-navigation";

@@ -8,10 +8,17 @@ export default function SplashWelcomeScreen({ navigation }: any) {
   return (
     <SignInWelcomeLayout>
       <View style={styles.imageContainer}>
-        <Image source={logo} />
+        <Image 
+        style={{
+          flex: 1,
+          width: 365,
+          height: 350,
+          resizeMode: 'contain'
+        }}
+        source={logo} />
         <Button
           onPress={() => {
-            navigation.navigate("Login");
+            navigation.navigate("Welcome");
           }}
         >
           Login Page
