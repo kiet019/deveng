@@ -1,6 +1,8 @@
 import React, { SetStateAction, useRef, useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
+import Entypo from "@expo/vector-icons/Entypo";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export const TitleInput = ({
   placeholder,
@@ -22,6 +24,60 @@ export const TitleInput = ({
     }
   };
 
+  /*
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [checkValidEmail, setCheckValidEmail] = useState(false)
+  const [seePassword, setSeePassword] = useState(true)
+
+  const handleCheckEmail = (text) => {
+    let re = /\S+@\S+\.\S+/;
+    let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+    setEmail(text);
+    if (re.test(text) || regex.test(text)) {
+      setCheckValidEmail(false);
+    } else {
+      setCheckValidEmail(true);
+    }
+  };
+
+  const checkPasswordValidity = value => {
+    const isNonWhiteSpace = /^\S+$/;
+    if (!isNonWhiteSpace.test(value)) {
+      return 'Password cannot contain white spaces!';
+    }
+
+    const isContainsUpperCase = /^(?=.[A-Z]).+$/;
+    if (!isContainsUpperCase.test(value)) {
+      return 'Password must contain at least one Upper case character!';
+    }
+
+    const isContainsLowerCase = /^(?=.[a-z]).+$/;
+    if (!isContainsLowerCase.test(value)) {
+      return 'Password must contain at least one Lower case character!';
+    }
+
+    const isContainsNumber = /^(?=.[0-9]).+$/;
+    if (!isContainsNumber.test(value)) {
+      return 'Password must contain at least one Number!';
+    }
+
+    return null;
+  };
+
+  const handleLogin = () => {
+    const checkPassword = checkPasswordValidity(password);
+    if (!checkPassword) {
+      alert('Login Success');
+    } else {
+      alert(checkPassword);
+    };
+  };
+*/
+
+
+//Login
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
@@ -33,12 +89,14 @@ export const TitleInput = ({
           secureTextEntry={password}
           value={input}
           onChangeText={handleTextChange}
-        />
+        />  
       </View>
     </View>
   );
 };
 
+
+//cái này bên Booking or Detail Booking
 export const OutlineInput = ({
   placeholder,
   onChangeText,
@@ -70,11 +128,14 @@ export const OutlineInput = ({
           value={input}
           onChangeText={handleTextChange}
         />
+        
       </View>
     </View>
   );
 };
 
+
+//OTP
 export const NumberInput = ({
   onChangeText,
   title,

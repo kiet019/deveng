@@ -5,6 +5,8 @@ import { Spacing } from "../components/common/spacing";
 import { Text } from "react-native-paper";
 import { ContainedButton } from "../components/common/button";
 import { SignInWelcomeLayout } from "../components/layout/signin-welcome";
+
+
 const loginLogo = require("../assets/images/login-logo.png");
 export default function LoginScreen({ navigation }: any) {
   const [input, setInput] = useState("");

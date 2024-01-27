@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { SignInWelcomeLayout } from "../../components/layout/signin-welcome";
-import { NumberInput, TitleInput } from "../../components/common/input";
+import { NumberInput } from "../../components/common/input";
 import { Spacing } from "../../components/common/spacing";
 import { ContainedButton } from "../../components/common/button";
 
