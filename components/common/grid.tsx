@@ -5,7 +5,7 @@ export const GridBox = ({
   children,
   spacing,
 }: {
-  children: ReactNode[];
+  children: any[];
   spacing: number;
 }) => {
   const styles = StyleSheet.create({
@@ -14,7 +14,7 @@ export const GridBox = ({
       flexWrap: "wrap",
     },
     item: {
-      paddingBottom: spacing,
+      paddingBottom: spacing/2,
       width: "50%", // 50% của độ rộng cha (2 cột)
     },
   });

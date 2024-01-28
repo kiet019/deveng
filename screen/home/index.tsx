@@ -1,10 +1,11 @@
 import React from "react";
 import HomeScreen from "./home";
 import { TitleHeader } from "../../components/header/title-header";
-import BookingScreen from "./booking";
-import BookingDetailScreen from "./booking-detail";
+import BookingScreen from "../booking";
+import BookingDetailScreen from "../booking-detail";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BottomNavigation } from "../../components/navigation/bottom-navigation";
+import CourseParticipantScreen from "./course-participant";
 
 const Tab = createBottomTabNavigator();
 export default function HomeNavigation() {
@@ -17,8 +18,8 @@ export default function HomeNavigation() {
       />
       <Tab.Screen
         name="Course"
-        component={HomeScreen}
-        options={{ headerShown: false }}
+        component={CourseParticipantScreen}
+        options={{ headerTitle: () => <TitleHeader title="Course Participant" /> }}
       />
       <Tab.Screen
         name="Message"

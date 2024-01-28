@@ -25,7 +25,7 @@ export const BasketCard = ({ props }: { props: BasketCardProps }) => {
           <Text
             style={{
               color: "#1F1F39",
-              fontSize: 16,
+              fontSize: 20,
               fontWeight: "bold",
               paddingTop: 5,
             }}
@@ -39,12 +39,12 @@ export const BasketCard = ({ props }: { props: BasketCardProps }) => {
               paddingVertical: 10,
             }}
           >
-            <Icon source={"account"} size={10} color="#B8B8D2" />
+            <Icon source={"account"} size={16} color="#B8B8D2" />
             <Text
               style={{
                 paddingHorizontal: 2,
                 color: "#B8B8D2",
-                fontSize: 12,
+                fontSize: 14,
               }}
             >
               {props.teacher}
@@ -57,7 +57,7 @@ export const BasketCard = ({ props }: { props: BasketCardProps }) => {
               fontWeight: "700",
             }}
           >
-            $ {props.price}
+            {props.price !== "" ? `$ ${props.price}` : ""}
           </Text>
         </View>
       </View>

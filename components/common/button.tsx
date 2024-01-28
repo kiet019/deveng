@@ -11,7 +11,7 @@ export const ContainedButton = ({ children, ...props }: ButtonProps) => {
         height: 60,
         justifyContent: "center",
         backgroundColor: "#5667FD",
-
+        opacity: props.disabled ? 0.5 : 1
       }}
     >
       <Text style={{ fontSize: 20, color: "#FFF", fontWeight: "600" }}>

@@ -1,9 +1,9 @@
 import { Image, StyleSheet, View } from "react-native";
-import { SignInWelcomeLayout } from "../../components/layout/signin-welcome";
+import { SignInWelcomeLayout } from "../components/layout/signin-welcome";
 import { Text } from "react-native-paper";
-import { ContainedButton } from "../../components/common/button";
+import { ContainedButton } from "../components/common/button";
 
-const avatar = require("../../assets/images/avatar.png");
+const avatar = require("../assets/images/avatar.png");
 export default function BookingDetailScreen({ navigation }: any) {
   return (
     <SignInWelcomeLayout>
@@ -88,7 +88,9 @@ export default function BookingDetailScreen({ navigation }: any) {
         </Text>
       </View>
       <View style={styles.buttonContainer}>
-        <ContainedButton>Booking</ContainedButton>
+        <ContainedButton onPress={() => {
+          navigation.push("Payment")
+        }}>Booking</ContainedButton>
       </View>
     </SignInWelcomeLayout>
   );

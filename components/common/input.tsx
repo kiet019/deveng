@@ -2,6 +2,14 @@ import React, { SetStateAction, useRef, useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
 
+
+
+
+
+
+
+
+
 export const TitleInput = ({
   placeholder,
   onChangeText,

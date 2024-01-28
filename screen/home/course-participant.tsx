@@ -1,35 +1,18 @@
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
-import { BasketCard, BasketCardProps } from "../../components/card/basket-card";
 import { useState } from "react";
+import { BasketCard, BasketCardProps } from "../../components/card/basket-card";
 import { SignInWelcomeLayout } from "../../components/layout/signin-welcome";
 
 const courseImage = require("../../assets/images/course-1.png");
-export default function BookingScreen({ navigation }: any) {
+export default function CourseParticipantScreen({ navigation }: any) {
   const data: BasketCardProps[] = [
     {
       imageSrc: courseImage,
-      price: "XX.XX",
+      price: "",
       teacher: "Webb Kyle",
       title: "Product Design",
     },
-    {
-      imageSrc: courseImage,
-      price: "XX.XX",
-      teacher: "Webb Kyle",
-      title: "Product Design 2",
-    },
-    {
-      imageSrc: courseImage,
-      price: "XX.XX",
-      teacher: "Webb Kyle",
-      title: "Product Design 3",
-    },
-    {
-      imageSrc: courseImage,
-      price: "XX.XX",
-      teacher: "Webb Kyle",
-      title: "Product Design 4",
-    },
+
   ];
   const renderItem = ({ item }: { item: BasketCardProps }) => {
     return (
