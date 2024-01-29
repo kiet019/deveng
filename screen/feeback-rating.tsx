@@ -16,7 +16,7 @@ const NotGood = require("../assets/icons/not-good.png");
 const Fine = require("../assets/icons/fine.png");
 const LookGood = require("../assets/icons/look-good.png");
 const VeryGood = require("../assets/icons/very-good.png");
-export default function FeedbackRatingScreen() {
+export default function FeedbackRatingScreen({navigation} : any) {
   return (
     <SignInWelcomeLayout paddingTop={15} paddingHorizontal={20}>
       <View style={{ flex: 1 }}>
@@ -38,7 +38,7 @@ export default function FeedbackRatingScreen() {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            marginVertical: 30
+            marginVertical: 30,
           }}
         >
           <FeedbackImageCard
@@ -82,23 +82,28 @@ export default function FeedbackRatingScreen() {
           multiline
         />
       </View>
-      <View style={{ flex: 0.4}}>
-        <Button
-          style={{
-            borderRadius: 5,
-            backgroundColor: "#20b2aa",
-          }}
-          mode="contained"
-        >
-          <Text
+      <View style={{ flex: 0.4 }}>
+        <View style={{elevation: 3, borderWidth: 0}}>
+          <Button
             style={{
-              color: "white",
-              fontWeight: "bold",
+              borderRadius: 5,
+              backgroundColor: "#20b2aa",
             }}
+            onPress={() => {
+              navigation.navigate("FeedbackSuccess")
+            }}
+            mode="contained"
           >
-            SUBMIT
-          </Text>
-        </Button>
+            <Text
+              style={{
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              SUBMIT
+            </Text>
+          </Button>
+        </View>
       </View>
     </SignInWelcomeLayout>
   );

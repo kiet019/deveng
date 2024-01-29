@@ -7,6 +7,8 @@ import {
   InformationAppItem,
   MessageItem,
 } from "./bottom-navigation-item";
+import { Keyboard } from "react-native";
+import { useEffect, useState } from "react";
 
 const renderItem = (itemName: string, isActive: boolean) => {
   switch (itemName) {
@@ -26,6 +28,21 @@ export const BottomNavigation = ({
   descriptors,
   navigation,
 }: BottomTabBarProps) => {
+  const [keyboardStatus, setKeyboardStatus] = useState<boolean>();
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
+      setKeyboardStatus(true);
+    });
+    const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+      setKeyboardStatus(false);
+    });
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
   return (
     <View
       style={{
@@ -77,6 +94,7 @@ export const BottomNavigation = ({
             onPress={onPress}
             onLongPress={onLongPress}
             style={{
+              display: !keyboardStatus ? "flex" : "none",
               flex: 1,
             }}
           >

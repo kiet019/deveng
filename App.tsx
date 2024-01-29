@@ -21,12 +21,25 @@ import FeedbackScreen from "./screen/feedback";
 import ComplementarityScreen from "./screen/complementarity";
 import EffortScreen from "./screen/effort";
 import FeedbackRatingScreen from "./screen/feeback-rating";
+import MessageDetailScreen from "./screen/message-detail";
+import { MessageHeader } from "./components/header/props-header";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="HomeNavigation"
+          component={HomeNavigation}
+          options={{ headerShown: false }}
+          // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
+        />
+        <Stack.Screen
+          name="MessageDetail"
+          component={MessageDetailScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="FeedbackRating"
           component={FeedbackRatingScreen}
@@ -73,12 +86,6 @@ export default function App() {
           name="Login"
           component={LoginScreen}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="HomeNavigation"
-          component={HomeNavigation}
-          options={{ headerShown: false }}
-          // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
         <Stack.Screen
           name="BookingDetail"
