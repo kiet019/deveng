@@ -69,6 +69,7 @@ export default function MessageScreen({ navigation }: any) {
       >
         {messageList.map((message, index) => (
           <Pressable
+            key={index}
             onPress={() => {
               navigation.push("MessageDetail", {
                 title: message.name,
@@ -77,7 +78,6 @@ export default function MessageScreen({ navigation }: any) {
             }}
           >
             <View
-              key={index}
               style={{
                 marginVertical: 5,
               }}

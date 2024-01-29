@@ -23,12 +23,19 @@ import EffortScreen from "./screen/effort";
 import FeedbackRatingScreen from "./screen/feeback-rating";
 import MessageDetailScreen from "./screen/message-detail";
 import { MessageHeader } from "./components/header/props-header";
+import CourseDetailScreen from "./screen/course-detail";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="CourseDetail"
+          component={CourseDetailScreen}
+          options={{ headerShown: false }}
+          // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
+        />
         <Stack.Screen
           name="HomeNavigation"
           component={HomeNavigation}

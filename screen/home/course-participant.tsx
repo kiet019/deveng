@@ -12,13 +12,12 @@ export default function CourseParticipantScreen({ navigation }: any) {
       teacher: "Webb Kyle",
       title: "Product Design",
     },
-
   ];
   const renderItem = ({ item }: { item: BasketCardProps }) => {
     return (
       <Pressable
         onPress={() => {
-          navigation.push("BookingDetail");
+          navigation.push("CourseDetail");
         }}
       >
         <BasketCard props={item} />
