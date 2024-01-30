@@ -17,3 +17,19 @@ export const Card = ({ children, ...props }: any) => {
   );
 };
 
+export const BorderCard = ({ children, ...props }: any) => {
+  return (
+    <View
+      style={{
+        borderRadius: 0,
+        borderWidth: 1,
+        borderColor: "#DFDFDF",
+        backgroundColor: "white",
+        padding: 10,
+        ...props.style,
+      }}
+    >
+      {children}
+    </View>
+  );
+};

@@ -51,7 +51,11 @@ export default function HomeScreen({ navigation }: any) {
             Infomation Access
           </Text>
           <View style={styles.categoryItemContainer}>
-            <HomeCard iconSrc={calendar} description="Weekly timetable" />
+            <Pressable onPress={() => {
+              navigation.push("Timetable")
+            }}>
+              <HomeCard iconSrc={calendar} description="Weekly timetable" />
+            </Pressable>
             <HomeCard iconSrc={course} description="Course participant" />
           </View>
         </View>

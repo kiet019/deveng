@@ -24,6 +24,8 @@ import FeedbackRatingScreen from "./screen/feeback-rating";
 import MessageDetailScreen from "./screen/message-detail";
 import { MessageHeader } from "./components/header/props-header";
 import CourseDetailScreen from "./screen/course-detail";
+import TimetableScreen from "./screen/timetable";
+import { TitleCenterHeader } from "./components/header/title-center-header";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -31,14 +33,19 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="CourseDetail"
-          component={CourseDetailScreen}
+          name="HomeNavigation"
+          component={HomeNavigation}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
         <Stack.Screen
-          name="HomeNavigation"
-          component={HomeNavigation}
+          name="Timetable"
+          component={TimetableScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CourseDetail"
+          component={CourseDetailScreen}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
