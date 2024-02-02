@@ -60,7 +60,7 @@ export default function MessageDetailScreen({ route, navigation }: any) {
         style={{
           position: "relative",
           flex: 1,
-          paddingLeft: 5,
+          marginHorizontal: 5,
           marginBottom: 5,
         }}
       >
@@ -155,7 +155,7 @@ const UserMessage = ({ position }: UserMessageProps) => {
               16.04
             </Text>
           </View>
-          <IconStatusUser imageSrc={user1} status="active" marginRight={5} />
+          <IconStatusUser imageSrc={user1} status="active" marginLeft={5} />
         </>
       )}
     </View>

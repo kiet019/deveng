@@ -29,11 +29,13 @@ const alreadyReadIcon = require("../../assets/icons/already-read.png");
 export const IconStatusUser = ({
   imageSrc,
   status,
+  marginLeft = 0,
   marginRight = 15,
 }: {
   imageSrc: any;
   status: "active" | "busy" | "inactive" | "none";
   marginRight?: number;
+  marginLeft?: number
 }) => {
   return (
     <View
@@ -41,6 +43,7 @@ export const IconStatusUser = ({
         position: "relative",
         width: 45,
         height: 45,
+        marginLeft,
         marginRight,
       }}
     >
