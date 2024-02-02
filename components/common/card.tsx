@@ -7,12 +7,12 @@ export const Card = ({ children, ...props }: any) => {
         backgroundColor: "white",
         justifyContent: "center",
         alignItems: "center",
-        paddingVertical: 23,
+        paddingVertical: 15,
         borderRadius: 20,
         ...props.style,
       }}
     >
-      <View style={{ width: 340 }}>{children}</View>
+      <View style={{ width: 300 }}>{children}</View>
     </View>
   );
 };

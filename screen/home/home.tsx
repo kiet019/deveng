@@ -19,7 +19,7 @@ export default function HomeScreen({ navigation }: any) {
           <Image
             source={banner}
             style={{
-              width: 390,
+              width: "100%",
               height: 220,
               objectFit: "contain",
               borderRadius: 20,

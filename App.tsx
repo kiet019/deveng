@@ -33,6 +33,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MessageDetail"
+          component={MessageDetailScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="HomeNavigation"
           component={HomeNavigation}
           options={{ headerShown: false }}
@@ -48,11 +58,6 @@ export default function App() {
           component={CourseDetailScreen}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
-        />
-        <Stack.Screen
-          name="MessageDetail"
-          component={MessageDetailScreen}
-          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="FeedbackRating"
@@ -96,11 +101,6 @@ export default function App() {
           options={{ headerTitle: () => <TitleHeader title="Payment" /> }}
         />
 
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
         <Stack.Screen
           name="BookingDetail"
           component={BookingDetailScreen}

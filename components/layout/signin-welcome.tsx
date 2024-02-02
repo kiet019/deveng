@@ -6,12 +6,15 @@ export const SignInWelcomeLayout = ({
   paddingTop = 0,
   backgroundColor = "#f4f5f9",
   isBottomTab = false,
-  paddingHorizontal = 10
+  paddingHorizontal = 10,
+  minHeight = 700,
 }: {
   paddingHorizontal?: number;
   paddingTop?: number;
   children: ReactNode;
   isBottomTab?: boolean;
+  minHeight?: number;
+
   backgroundColor?: string;
 }) => {
   return (
@@ -20,8 +23,8 @@ export const SignInWelcomeLayout = ({
         flex: 1,
         paddingTop,
         paddingHorizontal,
-        minHeight: 700,
         backgroundColor,
+        minHeight,
         paddingBottom: isBottomTab ? 89 : 0,
       }}
     >

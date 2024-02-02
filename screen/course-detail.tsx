@@ -85,7 +85,7 @@ const RenderComponent = () => {
       {Array.from({ length: 3 }, (_, index) => (
         <View style={styles.smallContainer} key={index}>
           <View style={styles.innerContainer}>
-            <View style={styles.flexCenter}>
+            <View style={{...styles.flexCenter, paddingHorizontal: 20}}>
               <Image source={pp} style={styles.smallImageProps} />
               <Text
                 style={{
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
   smallContainer: {
     height: 45,
     marginVertical: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     backgroundColor: "white",
     borderRadius: 15,
     paddingVertical: 10,

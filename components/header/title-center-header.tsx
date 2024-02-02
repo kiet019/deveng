@@ -15,7 +15,7 @@ export const TitleCenterHeader = ({
       </Pressable>
       <Text
         style={{
-          width: 330,
+          width: 300,
           fontSize: 20,
           fontWeight: "600",
           textAlign: "center",

@@ -23,7 +23,7 @@ export default function TimetableScreen({ navigation }: any) {
             marginBottom: 40,
             textAlign: "center",
             color: "#20639B",
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: "bold",
           }}
         >
@@ -33,8 +33,8 @@ export default function TimetableScreen({ navigation }: any) {
           <View
             style={{
               ...styles.flexBetween,
-              marginVertical: 15,
-              marginHorizontal: 20,
+              marginVertical: 10,
+              marginHorizontal: 15,
             }}
           >
             <Icon
@@ -51,14 +51,14 @@ export default function TimetableScreen({ navigation }: any) {
               color="#20639B"
             />
           </View>
-          <View style={{ ...styles.flexBetween, marginVertical: 10 }}>
+          <View style={{ ...styles.flexBetween, marginVertical: 5 }}>
             {daysOfWeek.map((day, index) => (
               <Text style={{ color: "#848080" }} key={index}>
                 {day}
               </Text>
             ))}
           </View>
-          <View style={{ ...styles.flexBetween, marginVertical: 10 }}>
+          <View style={{ ...styles.flexBetween, marginVertical: 5 }}>
             {datesOfWeek.map((date) => (
               <DateIcon date={date} isActive={date === activeDate} />
             ))}
@@ -144,7 +144,7 @@ const DateBlock = ({ props }: { props: DateBlockProps }) => {
           alignItems: "center",
         }}
       >
-        <Text style={{ fontSize: 25, color: "#20639B", fontWeight: "bold" }}>
+        <Text style={{ fontSize: 20, color: "#20639B", fontWeight: "bold" }}>
           {props.date}
         </Text>
         <Text style={{ marginTop: 5, fontSize: 16, color: "#20639B" }}>

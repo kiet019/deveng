@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { Icon } from "react-native-paper";
-
+import { Keyboard } from "react-native";
+import { useEffect, useState } from "react";
 export const MessageHeader = ({
   title,
   imageSrc,
@@ -10,6 +11,21 @@ export const MessageHeader = ({
   title: string;
   imageSrc: any;
 }) => {
+  const [keyboardStatus, setKeyboardStatus] = useState<boolean>();
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener("keyboardDidShow", () => {
+      setKeyboardStatus(true);
+    });
+    const hideSubscription = Keyboard.addListener("keyboardDidHide", () => {
+      setKeyboardStatus(false);
+    });
+
+    return () => {
+      showSubscription.remove();
+      hideSubscription.remove();
+    };
+  }, []);
   return (
     <View style={styles.header}>
       <Pressable onPress={goBack}>
@@ -27,9 +43,9 @@ export const MessageHeader = ({
       />
       <Text
         style={{
-          fontSize: 20,
+          fontSize: 15,
           fontWeight: "600",
-          marginLeft: 15,
+          marginLeft: 5,
           color: "#1B1A57",
         }}
       >

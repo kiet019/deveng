@@ -7,7 +7,7 @@ export const HomeItem = ({ isActive }: { isActive: boolean }) => {
   return (
     <>
       <Icon
-        size={40}
+        size={30}
         source={"home"}
         color={isActive ? PRIMARY_COLOR : "white"}
       />
@@ -26,7 +26,7 @@ export const MessageItem = ({ isActive }: { isActive: boolean }) => {
   return (
     <>
       <Icon
-        size={40}
+        size={30}
         source={"message-processing"}
         color={isActive ? PRIMARY_COLOR : "white"}
       />
@@ -45,7 +45,7 @@ export const InformationItem = ({ isActive }: { isActive: boolean }) => {
   return (
     <>
       <Icon
-        size={40}
+        size={30}
         source={"account"}
         color={isActive ? PRIMARY_COLOR : "white"}
       />
@@ -64,7 +64,7 @@ export const CourseItem = ({ isActive }: { isActive: boolean }) => {
   return (
     <>
       <Icon
-        size={40}
+        size={30}
         source={"card-text"}
         color={isActive ? PRIMARY_COLOR : "white"}
       />
@@ -83,7 +83,7 @@ export const InformationAppItem = ({ isActive }: { isActive: boolean }) => {
   return (
     <>
       <Icon
-        size={40}
+        size={30}
         source={"mail"}
         color={isActive ? PRIMARY_COLOR : "white"}
       />
@@ -100,7 +100,7 @@ export const InformationAppItem = ({ isActive }: { isActive: boolean }) => {
 };
 const styles = StyleSheet.create({
   text: {
-    fontSize: 14,
+    fontSize: 10,
     fontWeight: "700",
   },
 });

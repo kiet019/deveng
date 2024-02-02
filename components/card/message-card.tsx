@@ -11,7 +11,7 @@ export interface MessageCardProps {
   alreadyRead: boolean;
 }
 
-const switchColor = (color: string) => {
+export const switchColor = (color: string) => {
   switch (color) {
     case "active":
       return "#4ce417";
@@ -25,6 +25,53 @@ const switchColor = (color: string) => {
 };
 
 const alreadyReadIcon = require("../../assets/icons/already-read.png");
+
+export const IconStatusUser = ({
+  imageSrc,
+  status,
+  marginRight = 15,
+}: {
+  imageSrc: any;
+  status: "active" | "busy" | "inactive" | "none";
+  marginRight?: number;
+}) => {
+  return (
+    <View
+      style={{
+        position: "relative",
+        width: 45,
+        height: 45,
+        marginRight,
+      }}
+    >
+      <Image
+        source={imageSrc}
+        style={{
+          width: 45,
+          height: 45,
+          borderRadius: 50,
+          objectFit: "cover",
+          position: "absolute",
+        }}
+      />
+      <View
+        style={{
+          width: 15,
+          height: 15,
+          borderRadius: 10,
+          borderWidth: 3,
+          bottom: 0,
+          right: 0,
+          position: "absolute",
+          borderColor: "white",
+          display: status === "none" ? "none" : "flex",
+          backgroundColor: switchColor(status),
+        }}
+      />
+    </View>
+  );
+};
+
 export const MessageCard = ({ props }: { props: MessageCardProps }) => {
   return (
     <View
@@ -44,39 +91,7 @@ export const MessageCard = ({ props }: { props: MessageCardProps }) => {
           flexDirection: "row",
         }}
       >
-        <View
-          style={{
-            position: "relative",
-            width: 50,
-            height: 50,
-            marginRight: 20,
-          }}
-        >
-          <Image
-            source={props.imageSrc}
-            style={{
-              width: 50,
-              height: 50,
-              borderRadius: 50,
-              objectFit: "cover",
-              position: "absolute",
-            }}
-          />
-          <View
-            style={{
-              width: 15,
-              height: 15,
-              borderRadius: 10,
-              borderWidth: 3,
-              bottom: 0,
-              right: 0,
-              position: "absolute",
-              borderColor: "white",
-              display: props.status === "none" ? "none" : "flex",
-              backgroundColor: switchColor(props.status),
-            }}
-          />
-        </View>
+        <IconStatusUser imageSrc={props.imageSrc} status={props.status} />
         <View
           style={{
             flexDirection: "column",
@@ -105,14 +120,17 @@ export const MessageCard = ({ props }: { props: MessageCardProps }) => {
                 style={{
                   width: 20,
                   height: 20,
-                  marginRight: 5
+                  marginRight: 5,
                 }}
               />
             ) : null}
             <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
               style={{
                 fontSize: 14,
                 color: "#4F5E7B",
+                width: 150,
               }}
             >
               {props.message}
@@ -143,7 +161,7 @@ export const MessageCard = ({ props }: { props: MessageCardProps }) => {
             display: props.totalUnread > 0 ? "flex" : "none",
             backgroundColor: "#2F80ED",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
           }}
         >
           <Text
