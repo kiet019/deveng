@@ -48,8 +48,8 @@ export const BottomNavigation = ({
       style={{
         flexDirection: "row",
         backgroundColor: "#e6e6e6",
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
         position: "absolute",
         bottom: 0,
       }}
@@ -104,8 +104,8 @@ export const BottomNavigation = ({
                 borderTopWidth: 1.5,
                 alignItems: "center",
                 paddingTop: 10,
-                paddingBottom: 15,
-                marginHorizontal: 23,
+                paddingBottom: 10,
+                marginHorizontal: 20,
               }}
             >
               {renderItem(label.toString(), isFocused)}

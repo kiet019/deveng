@@ -30,15 +30,45 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="SplashWelcome"
+          component={SplashWelcomeScreen}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
-          name="CourseDetail"
-          component={CourseDetailScreen}
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{ headerShown: false }}
+        />
+      <Stack.Screen
+          name="SignUp-Password"
+          component={SignUpPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp-Email"
+          component={SignUpEmail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUp-Verify"
+          component={SignUpVerify}
+          options={{ headerShown: false }}
+        />
+      <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+      <Stack.Screen
+          name="HomeNavigation"
+          component={HomeNavigation}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
         <Stack.Screen
-          name="HomeNavigation"
-          component={HomeNavigation}
+          name="CourseDetail"
+          component={CourseDetailScreen}
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Your basket" /> }}
         />
@@ -88,12 +118,6 @@ export default function App() {
           // options={{ headerShown: false }}
           options={{ headerTitle: () => <TitleHeader title="Payment" /> }}
         />
-
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
         <Stack.Screen
           name="BookingDetail"
           component={BookingDetailScreen}
@@ -117,31 +141,6 @@ export default function App() {
           name="Contact"
           component={ContactScreen}
           options={{ headerTitle: "" }}
-        />
-        <Stack.Screen
-          name="SignUp-Password"
-          component={SignUpPassword}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignUp-Email"
-          component={SignUpEmail}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SignUp-Verify"
-          component={SignUpVerify}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="SplashWelcome"
-          component={SplashWelcomeScreen}
-          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

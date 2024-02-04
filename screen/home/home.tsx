@@ -62,7 +62,11 @@ export default function HomeScreen({ navigation }: any) {
             Contact Us
           </Text>
           <View style={styles.categoryItemContainer}>
+            <Pressable onPress={() => {
+              navigation.navigate("Contact");
+            }}>
             <HomeCard iconSrc={contact} description="Contact Us" />
+            </Pressable>
           </View>
         </View>
         <View
