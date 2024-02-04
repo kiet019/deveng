@@ -31,6 +31,12 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen
+          name="Feedback"
+          component={FeedbackScreen}
+          options={{ headerShown: false }}
+          // options={{ headerTitle: () => <TitleHeader title="Payment" /> }}
+        />
+      <Stack.Screen
           name="SplashWelcome"
           component={SplashWelcomeScreen}
           options={{ headerShown: false }}
@@ -88,12 +94,7 @@ export default function App() {
           options={{ headerShown: false }}
           // options={{ headerTitle: () => <TitleHeader title="Payment" /> }}
         />
-        <Stack.Screen
-          name="Feedback"
-          component={FeedbackScreen}
-          options={{ headerShown: false }}
-          // options={{ headerTitle: () => <TitleHeader title="Payment" /> }}
-        />
+        
         <Stack.Screen
           name="Complementarity"
           component={ComplementarityScreen}
