@@ -1,14 +1,40 @@
 import React, { SetStateAction, useRef, useState } from "react";
-import { TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet, DimensionValue } from "react-native";
 import { Text } from "react-native-paper";
 
+export const StyledInput = ({
+  placeholder,
+  onChangeText,
+  width = "auto",
+  password = false,
+  marginTop= 11,
+}: {
+  marginTop?: number,
+  width?: DimensionValue;
+  placeholder: string;
+  onChangeText: SetStateAction<any>;
+  password?: boolean;
+}) => {
+  const [input, setInput] = useState("");
 
+  const handleTextChange = (newText: string) => {
+    setInput(newText);
+    if (onChangeText) {
+      onChangeText(newText);
+    }
+  };
 
-
-
-
-
-
+  return (
+    <TextInput
+      style={{ ...styles.input, width, marginTop }}
+      placeholder={placeholder}
+      placeholderTextColor={"#364356"}
+      secureTextEntry={password}
+      value={input}
+      onChangeText={handleTextChange}
+    />
+  );
+};
 
 export const TitleInput = ({
   placeholder,
@@ -150,8 +176,6 @@ export const NumberInput = ({
   );
 };
 
-
-
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
@@ -181,8 +205,8 @@ const styles = StyleSheet.create({
   input: {
     marginTop: 11,
     borderRadius: 10,
-    paddingHorizontal: 16,
-    paddingVertical: 19,
+    paddingHorizontal: 12,
+    paddingVertical: 13,
     backgroundColor: "#FFF",
     fontSize: 14,
     fontWeight: "300",
@@ -194,9 +218,9 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     paddingVertical: 7,
-    paddingHorizontal: 26
+    paddingHorizontal: 26,
   },
   innerOutlineContainer: {
-    width:270,
-  }
+    width: 270,
+  },
 });
